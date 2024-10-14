@@ -90,7 +90,7 @@
   ```ruby
     def aliyun_ugsv_pro
         # 【必须】短视频专业版SDK，如果无需使用剪同款功能，把下面的“/all”去掉
-        pod 'AliyunVideoSDKPro/all', '6.15.0'
+        pod 'AliyunVideoSDKPro/all', '6.15.1'
         
         # 【必须】短视频全功能UI组件，如果无需使用剪同款功能，把下面的“_all”去掉
         pod "AUIUgsv/AliyunVideoSDKPro_all", :path => "../"
@@ -118,7 +118,7 @@
   ```ruby
     def aliyun_ugsv_ugc
         # 【必须】Standard组合包
-        pod 'AliVCSDK_UGC', '6.15.0'
+        pod 'AliVCSDK_UGC', '6.15.1'
         
         # 【可选】拍摄功能如果需要人脸贴纸，需要引入，否则无需引入
         pod 'AliVCSDK_UGC/AlivcUgsvBundle'
@@ -155,7 +155,7 @@
   ```ruby
     def aliyun_ugsv_full
         # 【必须】Standard组合包
-        pod 'AliVCSDK_Standard', '6.15.0'
+        pod 'AliVCSDK_Standard', '6.15.1'
         
         # 【可选】拍摄功能如果需要人脸贴纸，需要引入，否则无需引入
         pod 'AliVCSDK_Standard/AlivcUgsvBundle'
