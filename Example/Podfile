@@ -1,0 +1,144 @@
+#use_frameworks!
+install! 'cocoapods', :deterministic_uuids => false
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '10.0'
+
+
+
+############################ 短视频全功能，使用UGC组合包  ############################
+def aliyun_ugsv_ugc
+    # 【必须】Standard组合包
+    pod 'AliVCSDK_UGC', '6.15.0'
+    
+    # 【可选】拍摄功能如果需要人脸贴纸，需要引入，否则无需引入
+    pod 'AliVCSDK_UGC/AlivcUgsvBundle'
+    # 【可选】如果需要剪同款功能，则引入，否则无需引入
+    pod 'AliVCSDK_UGC/AlivcUgsvTemplate'
+
+    # 【必须】短视频全功能UI组件
+    pod "AUIUgsv/AliVCSDK_UGC", :path => "../"
+    pod 'AUIUgsv/Recorder', :path => "../"
+    pod 'AUIUgsv/Editor', :path => "../"
+    pod 'AUIUgsv/Clipper', :path => "../"
+    
+    # 【可选】如果不需要剪同款，则无需引入
+    pod 'AUIUgsv/Template', :path => "../"
+    
+    # 【必须】集成基础UI组件
+    pod "AUIFoundation/All", :path => "../AUIBaseKits/AUIFoundation"
+    
+    # 【可选】集成美颜UI组件，有以下3种可选形式，请根据自己业务选择
+    # 1、使用Queen专业版美颜（下面代码使用第一种，无需修改AUIBeauty的集成方式）
+    # 2、使用基础美颜，SDK使用组合包才可以使用这种方式，把下面的“Queen”替换为“AliVCSDK_UGC”
+    # 3、不需要使用美颜，则无需集成，注掉下面代码
+    pod "AUIBeauty/Queen", :path => "../AUIBaseKits/AUIBeauty"
+    
+end
+
+############################ 短视频全功能，使用Standard组合包  ############################
+def aliyun_ugsv_full
+    # 【必须】Standard组合包
+    pod 'AliVCSDK_Standard', '6.15.0'
+    
+    # 【可选】拍摄功能如果需要人脸贴纸，需要引入，否则无需引入
+    pod 'AliVCSDK_Standard/AlivcUgsvBundle'
+    # 【可选】如果需要剪同款功能，则引入，否则无需引入
+    pod 'AliVCSDK_Standard/AlivcUgsvTemplate'
+
+    # 【必须】短视频全功能UI组件
+    pod "AUIUgsv/AliVCSDK_Standard", :path => "../"
+    pod 'AUIUgsv/Recorder', :path => "../"
+    pod 'AUIUgsv/Editor', :path => "../"
+    pod 'AUIUgsv/Clipper', :path => "../"
+    
+    # 【可选】如果不需要剪同款，则无需引入
+    pod 'AUIUgsv/Template', :path => "../"
+    
+    # 【必须】集成基础UI组件
+    pod "AUIFoundation/All", :path => "../AUIBaseKits/AUIFoundation"
+    
+    # 【可选】集成美颜UI组件，有以下3种可选形式，请根据自己业务选择
+    # 1、使用Queen专业版美颜（下面代码使用第一种，无需修改AUIBeauty的集成方式）
+    # 2、使用基础美颜，SDK使用组合包才可以使用这种方式，把下面的“Queen”替换为“AliVCSDK_Standard”
+    # 3、不需要使用美颜，则无需集成，注掉下面代码
+    pod "AUIBeauty/Queen", :path => "../AUIBaseKits/AUIBeauty"
+end
+
+
+############################ 短视频全功能，使用专业版包  ############################
+def aliyun_ugsv_pro
+    # 【必须】短视频专业版SDK，如果无需使用剪同款功能，把下面的“/all”去掉
+    pod 'AliyunVideoSDKPro/all', '6.15.0'
+    
+    # 【必须】短视频全功能UI组件，如果无需使用剪同款功能，把下面的“_all”去掉
+    pod "AUIUgsv/AliyunVideoSDKPro_all", :path => "../"
+    pod 'AUIUgsv/Recorder', :path => "../"
+    pod 'AUIUgsv/Editor', :path => "../"
+    pod 'AUIUgsv/Clipper', :path => "../"
+    
+    # 【可选】如果不需要剪同款，则无需引入
+    pod 'AUIUgsv/Template', :path => "../"
+    
+    # 【必须】集成基础UI组件
+    pod "AUIFoundation/All", :path => "../AUIBaseKits/AUIFoundation"
+    
+    # 【可选】使用Queen专业版美颜
+    pod "AUIBeauty/Queen", :path => "../AUIBaseKits/AUIBeauty"
+end
+
+
+############################ 短视频标准功能，使用标准版包  ############################
+def aliyun_ugsv_standard
+    # 【必须】短视频专业版SDK
+    pod 'AliyunVideoSDKStd', '6.15.1'
+    
+    # 【必须】短视频全功能UI组件
+    pod "AUIUgsv/AliyunVideoSDKStd", :path => "../"
+    pod 'AUIUgsv/Recorder', :path => "../"
+    pod 'AUIUgsv/Editor', :path => "../"
+    pod 'AUIUgsv/Clipper', :path => "../"
+    
+    # 【必须】集成基础UI组件
+    pod "AUIFoundation/All", :path => "../AUIBaseKits/AUIFoundation"
+    
+    # 【可选】使用Queen专业版美颜
+    pod "AUIBeauty/Queen", :path => "../AUIBaseKits/AUIBeauty"
+end
+
+
+############################ 短视频基础功能，使用基础版包  ############################
+def aliyun_ugsv_basic
+    # 【必须】短视频基础版SDK
+    pod 'AliyunVideoSDKBasic', '6.15.1'
+    
+    # 【必须】短视频基础功能UI组件
+    pod "AUIUgsv/AliyunVideoSDKBasic", :path => "../"
+    pod 'AUIUgsv/Recorder', :path => "../"
+    pod 'AUIUgsv/Clipper', :path => "../"
+
+
+    # 【必须】集成基础UI组件
+    pod "AUIFoundation/All", :path => "../AUIBaseKits/AUIFoundation"
+    
+    # 【可选】使用Queen专业版美颜
+    pod "AUIBeauty/Queen", :path => "../AUIBaseKits/AUIBeauty"
+end
+
+
+def common_demo_pods
+    pod 'Masonry'
+    pod 'AFNetworking'
+    pod 'SDWebImage', '5.15.4'
+    pod 'ZipArchive'
+    pod 'AliyunOSSiOS', '2.10.17'
+end
+
+
+target 'AUIUgsvDemo' do
+  
+    common_demo_pods
+    pod "AUIUgsv/Main", :path => "../"
+    aliyun_ugsv_pro
+
+end
