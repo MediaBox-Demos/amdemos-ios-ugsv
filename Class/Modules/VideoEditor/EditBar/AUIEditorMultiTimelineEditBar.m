@@ -6,6 +6,7 @@
 //
 
 #import "AUIEditorMultiTimelineEditBar.h"
+#import "AUITimelineViewAppearance.h"
 
 @interface AUIEditorMultiTimelineEditBar ()
 

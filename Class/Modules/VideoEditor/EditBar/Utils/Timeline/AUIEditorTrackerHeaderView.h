@@ -6,9 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AUIUgsvCom/AUIUgsvCom.h>
 #import "AUIUgsvMacro.h"
 #import "AUIEditorActionDef.h"
+#import "AUITrackerHeaderViewLoader.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -5,8 +5,8 @@
 //  Created by Bingo on 2022/6/23.
 //
 
-#import <AUIUgsvCom/AUIUgsvCom.h>
 #import "AlivcUgsvSDKHeader.h"
+#import "AUITimelineView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

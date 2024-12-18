@@ -10,7 +10,8 @@
 #import "AUIFoundation.h"
 #import "AVAsset+UgsvHelper.h"
 #import "AUIVideoPlayProtocol.h"
-#import <AUIUgsvCom/AUIUgsvCom.h>
+#import "AUIAsyncImageGeneratorProtocol.h"
+#import "AUIAsyncImageGeneratorVideo.h"
 
 // MARK: - Thumbnail Mgr
 @class AUICropTimelineThumbnailInfo;

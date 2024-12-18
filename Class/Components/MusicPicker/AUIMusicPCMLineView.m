@@ -7,7 +7,9 @@
 
 #import "AUIMusicPCMLineView.h"
 #import "AUIUgsvMacro.h"
-#import <AUIUgsvCom/AUIUgsvCom.h>
+#import "AUIAsyncImageGeneratorAudio.h"
+
+#import <AVFoundation/AVFoundation.h>
 
 typedef void(^FetchPCMCompleted)(NSArray<NSNumber *> *);
 @interface AUIMusicPCMCachesManager : NSObject

@@ -6,7 +6,6 @@
 //
 
 #import "AUIEditorVideoEditBar.h"
-#import <AUIUgsvCom/AUIUgsvCom.h>
 #import "AUIVolumePanel.h"
 #import "AUIVideoAugmentationPanel.h"
 #import "AUISpeedChangedControllPanel.h"

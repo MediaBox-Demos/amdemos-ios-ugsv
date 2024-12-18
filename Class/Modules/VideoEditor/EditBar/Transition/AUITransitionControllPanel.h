@@ -7,7 +7,7 @@
 
 #import "AVBaseControllPanel.h"
 #import "AUIEditorActionManager.h"
-#import <AUIUgsvCom/AUIUgsvCom.h>
+#import "AUITimelineView.h"
 
 @class AEPVideoTrackClip;
 

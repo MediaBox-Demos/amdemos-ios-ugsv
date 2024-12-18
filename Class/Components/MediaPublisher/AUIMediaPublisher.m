@@ -7,8 +7,8 @@
 
 #import "AUIMediaPublisher.h"
 #import "AUIMediaPublisherProgress.h"
+#import "AUIAsyncImageGeneratorVideo.h"
 
-#import <AUIUgsvCom/AUIUgsvCom.h>
 #import "AUIPhotoPicker.h"
 #import "AUIUgsvMacro.h"
 #import "AUIUgsvPath.h"

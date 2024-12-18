@@ -58,7 +58,6 @@ TODO: Add long description of the pod here.
   s.subspec 'Common' do |ss|
     ss.resource = 'Resources/AlivcUgsv.bundle'
     ss.source_files = 'Class/Base/**/*.{h,m,mm}', 'Class/Components/**/*.{h,m,mm}'
-    ss.vendored_frameworks = 'framework/*.framework'
     ss.dependency 'AUIFoundation/All'
     ss.dependency 'VODUpload'
   end

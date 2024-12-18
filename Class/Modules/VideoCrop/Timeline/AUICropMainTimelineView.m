@@ -7,7 +7,9 @@
 
 #import "AUICropMainTimelineView.h"
 #import "AUIUgsvMacro.h"
-#import <AUIUgsvCom/AUIUgsvCom.h>
+#import "AUITimelineView.h"
+#import "AUITimelineViewAppearance.h"
+#import "AUIAsyncImageGeneratorVideo.h"
 
 @interface AUICropMainTimelineView () <AUITimelineViewDelegate, AUIVideoPlayObserver>
 

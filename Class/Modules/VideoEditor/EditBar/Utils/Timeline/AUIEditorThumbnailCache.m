@@ -6,6 +6,8 @@
 //
 
 #import "AUIEditorThumbnailCache.h"
+#import "AUIAsyncImageGeneratorVideo.h"
+#import "AUIAsyncImageGeneratorPhoto.h"
 
 
 @interface AUIEditorThumbnailCache ()

@@ -7,6 +7,7 @@
 
 #import "AUIEditorTimelineEditBar.h"
 #import "AUITransitionControllPanel.h"
+#import "AUITimelineViewAppearance.h"
 
 @interface AUIEditorTimelineEditBar ()
 

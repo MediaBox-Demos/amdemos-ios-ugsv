@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AUIUgsvCom/AUIUgsvCom.h>
+#import "AUITrackerTitleViewLoader.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
