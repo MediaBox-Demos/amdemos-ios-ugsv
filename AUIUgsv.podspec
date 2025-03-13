@@ -42,7 +42,6 @@ TODO: Add long description of the pod here.
     ss.dependency 'AUIUgsv/Recorder'
     ss.dependency 'AUIUgsv/Editor'
     ss.dependency 'AUIUgsv/Clipper'
-    ss.dependency 'AUIUgsv/Template'
   end
   
   s.subspec 'Basic' do |ss|
@@ -79,20 +78,12 @@ TODO: Add long description of the pod here.
     ss.source_files = 'Class/Modules/VideoCrop/**/*.{h,m,mm}'
   end
   
-  s.subspec 'Template' do |ss|
-    ss.dependency 'AUIUgsv/Common'
-    ss.dependency 'AUIUgsv/Clipper'
-    ss.resource = 'Resources/Template.bundle','Resources/Music.bundle'
-    ss.source_files = 'Class/Modules/VideoTemplate/**/*.{h,m,mm}'
-  end
-  
   s.subspec 'AliVCSDK_Standard' do |ss|
     ss.dependency 'AliVCSDK_Standard'
   end
   
   s.subspec 'AliVCSDK_Standard_all' do |ss|
     ss.dependency 'AUIUgsv/AliVCSDK_Standard'
-    ss.dependency 'AliVCSDK_Standard/AlivcUgsvTemplate'
     ss.dependency 'AliVCSDK_Standard/AlivcUgsvBundle'
   end
   
@@ -102,10 +93,16 @@ TODO: Add long description of the pod here.
   
   s.subspec 'AliVCSDK_UGC_all' do |ss|
     ss.dependency 'AUIUgsv/AliVCSDK_UGC'
-    ss.dependency 'AliVCSDK_UGC/AlivcUgsvTemplate'
     ss.dependency 'AliVCSDK_UGC/AlivcUgsvBundle'
   end
+
+  s.subspec 'AliVCSDK_ShortVideo' do |ss|
+    ss.dependency 'AliVCSDK_ShortVideo'
+  end
   
+  s.subspec 'AliVCSDK_ShortVideo_all' do |ss|
+    ss.dependency 'AliVCSDK_ShortVideo'
+  end
   
   s.subspec 'AliyunVideoSDKPro' do |ss|
     ss.dependency 'AliyunVideoSDKPro'

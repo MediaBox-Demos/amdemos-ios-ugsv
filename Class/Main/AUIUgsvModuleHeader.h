@@ -24,12 +24,7 @@
 #define ENABLE_UGSV_CLIPPER
 #endif
 
-#if __has_include("AUIUgsvOpenModuleHelper+Template.h")
-#import "AUIUgsvOpenModuleHelper+Template.h"
-#define ENABLE_UGSV_TEMPLATE
-#endif
-
-#if defined(ENABLE_UGSV_RECORDER) || defined(ENABLE_UGSV_EDITOR) || defined(ENABLE_UGSV_CLIPPER) || defined(ENABLE_UGSV_TEMPLATE)
+#if defined(ENABLE_UGSV_RECORDER) || defined(ENABLE_UGSV_EDITOR) || defined(ENABLE_UGSV_CLIPPER)
 #import "AUIUgsvMacro.h"
 #import "AUIUgsvPath.h"
 #import "AlivcUgsvSDKHeader.h"

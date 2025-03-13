@@ -14,8 +14,11 @@
 #elif __has_include(<AliVCSDK_UGC/AliVCSDK_UGC.h>)
 #import <AliVCSDK_UGC/AliVCSDK_UGC.h>
 
-#elif __has_include(<AliyunVideoSDKPro/AliyunVideoSDKPro.h>)
-#import <AliyunVideoSDKPro/AliyunVideoSDKPro.h>
+#elif __has_include(<AliVCSDK_UGC/AliVCSDK_UGC.h>)
+#import <AliVCSDK_UGC/AliVCSDK_UGC.h>
+
+#elif __has_include(<AliVCSDK_ShortVideo/AliVCSDK_ShortVideo.h>)
+#import <AliVCSDK_ShortVideo/AliVCSDK_ShortVideo.h>
 
 #elif __has_include(<AliyunVideoSDKBasic/AliyunVideoSDKBasic.h>)
 #import <AliyunVideoSDKBasic/AliyunVideoSDKBasic.h>

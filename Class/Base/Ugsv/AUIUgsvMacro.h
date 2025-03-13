@@ -23,7 +23,5 @@
 #define AUIUgsvClipperImage(key) AUIUgsvGetImage(([NSString stringWithFormat:@"Clipper/%@", key]))
 // recorder
 #define AUIUgsvRecorderImage(key) AUIUgsvGetImage(([NSString stringWithFormat:@"Recorder/%@", key]))
-// template
-#define AUIUgsvTemplateImage(key) AUIUgsvGetImage(([NSString stringWithFormat:@"Template/%@", key]))
 
 #endif /* AUIUgsvMacro_h */

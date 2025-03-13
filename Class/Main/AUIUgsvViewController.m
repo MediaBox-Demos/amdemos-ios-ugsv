@@ -15,7 +15,6 @@ typedef NS_ENUM(NSUInteger, AUIUgsvEntranceType) {
     AUIUgsvEntranceTypeMixRecorder,
     AUIUgsvEntranceTypeEditor,
     AUIUgsvEntranceTypeClipper,
-    AUIUgsvEntranceTypeTemplate,
     AUIUgsvEntranceTypeMore
 };
 
@@ -30,24 +29,24 @@ typedef NS_ENUM(NSUInteger, AUIUgsvEntranceType) {
     item1.info = @"";
     item1.icon = AUIUgsvGetImage(@"ic_ugsv_recorder");
     item1.tag = AUIUgsvEntranceTypeRecorder;
-    
+
     AVCommonListItem *item2 = [AVCommonListItem new];
-    item2.title = AUIUgsvGetString(@"视频编辑");
+    item2.title = AUIUgsvGetString(@"视频合拍");
     item2.info = @"";
-    item2.icon = AUIUgsvGetImage(@"ic_ugsv_editor");
-    item2.tag = AUIUgsvEntranceTypeEditor;
+    item2.icon = AUIUgsvGetImage(@"ic_ugsv_mix_recorder");
+    item2.tag = AUIUgsvEntranceTypeMixRecorder;
     
     AVCommonListItem *item3 = [AVCommonListItem new];
-    item3.title = AUIUgsvGetString(@"视频裁剪");
+    item3.title = AUIUgsvGetString(@"视频编辑");
     item3.info = @"";
-    item3.icon = AUIUgsvGetImage(@"ic_ugsv_clipper");
-    item3.tag = AUIUgsvEntranceTypeClipper;
+    item3.icon = AUIUgsvGetImage(@"ic_ugsv_editor");
+    item3.tag = AUIUgsvEntranceTypeEditor;
     
     AVCommonListItem *item4 = [AVCommonListItem new];
-    item4.title = AUIUgsvGetString(@"剪同款");
+    item4.title = AUIUgsvGetString(@"视频裁剪");
     item4.info = @"";
-    item4.icon = AUIUgsvGetImage(@"ic_ugsv_template");
-    item4.tag = AUIUgsvEntranceTypeTemplate;
+    item4.icon = AUIUgsvGetImage(@"ic_ugsv_clipper");
+    item4.tag = AUIUgsvEntranceTypeClipper;
     
     AVCommonListItem *item5 = [AVCommonListItem new];
     item5.title = AUIUgsvGetString(@"更多");
@@ -55,13 +54,9 @@ typedef NS_ENUM(NSUInteger, AUIUgsvEntranceType) {
     item5.icon = AUIUgsvGetImage(@"ic_ugsv_more");
     item5.tag = AUIUgsvEntranceTypeMore;
     
-    AVCommonListItem *item6 = [AVCommonListItem new];
-    item6.title = AUIUgsvGetString(@"视频合拍");
-    item6.info = @"";
-    item6.icon = AUIUgsvGetImage(@"ic_ugsv_mix_recorder");
-    item6.tag = AUIUgsvEntranceTypeMixRecorder;
     
-    NSArray *list = @[item1, item6, item2, item3, item4, item5];
+    
+    NSArray *list = @[item1, item2, item3, item4, item5];
     
     self = [super initWithItemList:list];
     if (self) {
@@ -99,11 +94,6 @@ typedef NS_ENUM(NSUInteger, AUIUgsvEntranceType) {
         case AUIUgsvEntranceTypeClipper:
         {
             [self openClipper];
-        }
-            break;
-        case AUIUgsvEntranceTypeTemplate:
-        {
-            [self openTemplate];
         }
             break;
         case AUIUgsvEntranceTypeMore:
@@ -162,14 +152,6 @@ typedef NS_ENUM(NSUInteger, AUIUgsvEntranceType) {
 - (void)openClipper {
 #ifdef ENABLE_UGSV_CLIPPER
     [AUIUgsvOpenModuleHelper openClipper:self param:nil publishParam:nil];
-#else
-    [AVAlertController show:AUIUgsvGetString(@"当前集成的SDK或模块不支持")];
-#endif
-}
-
-- (void)openTemplate {
-#ifdef ENABLE_UGSV_TEMPLATE
-    [AUIUgsvOpenModuleHelper openTemplateList:self];
 #else
     [AVAlertController show:AUIUgsvGetString(@"当前集成的SDK或模块不支持")];
 #endif

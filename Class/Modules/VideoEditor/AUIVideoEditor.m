@@ -193,9 +193,15 @@
         });
     };
     
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onPanGesture:)];
+    panGesture.delegate = self;
+    [self.videoPreview addGestureRecognizer:panGesture];
+    
     UITapGestureRecognizer *tapGesture =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onPreviewClicked:)];
+    [tapGesture requireGestureRecognizerToFail:panGesture];
     tapGesture.delegate = self;
     [self.videoPreview addGestureRecognizer:tapGesture];
+    
     [self.contentView addSubview:self.videoPreview];
     [self.contentView insertSubview:self.playTimeView aboveSubview:self.videoPreview];
 }
@@ -249,6 +255,25 @@
         self.playTimeView.frame = CGRectMake(0, self.menuBar.av_top - 42, self.contentView.av_width, 42);
         self.videoPreview.frame = CGRectMake(0, 0, self.contentView.av_width, self.playTimeView.av_top);
     }
+}
+
+- (void)onPanGesture:(UIPanGestureRecognizer *)recognizer {
+    if (recognizer.state != UIGestureRecognizerStateChanged) {
+        return;
+    }
+    
+    AUIEditorSelectionPreview *selectdPreview = self.selectionManager.currentSelectionPreview;
+    if (!selectdPreview || !selectdPreview.superview) {
+        return;
+    }
+    
+    CGPoint move = [recognizer translationInView:selectdPreview.superview];
+    [recognizer setTranslation:CGPointZero inView:selectdPreview.superview];
+    
+    CGPoint target = selectdPreview.center;
+    target.x += move.x;
+    target.y += move.y;
+    selectdPreview.center = target;
 }
 
 - (void)onPreviewClicked:(UITapGestureRecognizer *)recognizer {
@@ -422,6 +447,12 @@
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
+    if (!self.selectionManager.currentSelectionPreview) {
+        if ([gestureRecognizer isKindOfClass:UIPanGestureRecognizer.class]) {
+            return NO;
+        }
+        return YES;
+    }
     return  ![touch.view isDescendantOfView:self.selectionManager.currentSelectionPreview];
 }
 
